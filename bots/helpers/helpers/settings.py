@@ -26,7 +26,8 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 ITEM_PIPELINES = {
-    'helpers.pipelines.HelpersPipeline': 300,
+    'helpers.pipelines.UniqueItemPersistencePipeline': 100,
+    'helpers.pipelines.RelatedItemPersistencePipeline': 200
 }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

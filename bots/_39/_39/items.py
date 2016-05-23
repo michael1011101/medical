@@ -5,15 +5,20 @@
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
-from scrapy_djangoitem import DjangoItem
+from bots.base.items import BaseItem
 from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo
 
 
-class DiseaseElementaryInfoItem(DjangoItem):
+class DiseaseElementaryInfoItem(BaseItem):
     django_model = DiseaseElementaryInfo
+    update_fields_list = ['name', 'position', 'medicare', 'department', 'infectiousness', 'infectious_method',
+                          'treatment_method', 'treatment_rate', 'major_groups', 'treatment_fee', 'typical_symptoms',
+                          'clinical_examination', 'complication', 'surgery', 'relative_drugs']
+    unique_key = ('d_id',)
 
-class DiseaseDetailInfoItem(DjangoItem):
+class DiseaseDetailInfoItem(BaseItem):
     django_model = DiseaseDetailInfo
+    update_fields_list = []
 
-class SymptomInfoItem(DjangoItem):
+class SymptomInfoItem(BaseItem):
     pass

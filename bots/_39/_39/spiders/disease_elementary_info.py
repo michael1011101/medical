@@ -17,6 +17,7 @@ class DiseaseElementaryInfoSpider(scrapy.Spider):
                 u'传播途径：': 1, u'治疗方法：': 1, u'治疗率：': 0,
                 u'多发人群：': 0, u'治疗费用：': 0, u'典型症状：': 1,
                 u'并发症：': 1, u'临床检查：': 1, u'手术：': 1, u'常用药品：': 1}
+    pipeline = ['UniqueItemPersistencePipeline']
 
     def __init__(self, from_id, to_id, *args, **kwargs):
         self.urls = get_urls_from_ids(from_id, to_id, 'disease')

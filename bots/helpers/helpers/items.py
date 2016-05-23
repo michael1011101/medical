@@ -5,12 +5,14 @@
 # See documentation in:
 # http://doc.scrapy.org/en/latest/topics/items.html
 
-from scrapy_djangoitem import DjangoItem
+from bots.base.items import BaseItem
 from stalk.models.helpers import DiseaseHelper, SymptomHelper
 
 
-class DiseaseItem(DjangoItem):
+class DiseaseItem(BaseItem):
     django_model = DiseaseHelper
+    update_fields_list = ['name', 'alias', 'link', 'relevant_symptoms']
 
-class SymptomItem(DjangoItem):
+class SymptomItem(BaseItem):
     django_model = SymptomHelper
+    update_fields_list = ['name', 'alias', 'link', 'relevant_diseases']

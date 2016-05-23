@@ -5,8 +5,11 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
+from bots.base.pipelines import BaseUniqueItemPersistencePipeline
+from bots.base.pipelines import BaseRelatedItemPersistencePipeline
 
-class HelpersPipeline(object):
-    def process_item(self, item, spider):
-        item.save()
-        return item
+class UniqueItemPersistencePipeline(BaseUniqueItemPersistencePipeline):
+    pass
+
+class RelatedItemPersistencePipeline(BaseRelatedItemPersistencePipeline):
+    pass

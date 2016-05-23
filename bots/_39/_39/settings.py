@@ -26,7 +26,8 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 ITEM_PIPELINES = {
-    '_39.pipelines._39Pipeline': 300,
+    '_39.pipelines.UniqueItemPersistencePipeline': 100,
+    '_39.pipelines.RelatedItemPersistencePipeline': 200
 }
 
 

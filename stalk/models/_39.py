@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from lolly import Lolly
 
-class DiseaseElementaryInfo(models.Model):
-    d_id = models.IntegerField()
+class DiseaseElementaryInfo(Lolly):
+    d_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=255, null=True)
     position = models.CharField(max_length=100, null=True)
     medicare = models.CharField(max_length=100, null=True)
@@ -24,8 +25,8 @@ class DiseaseElementaryInfo(models.Model):
         app_label = 'stalk'
         db_table = 'disease_elementary_info'
 
-class DiseaseDetailInfo(models.Model):
-    d_id = models.IntegerField()
+class DiseaseDetailInfo(Lolly):
+    d_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=255, null=True)
     description = models.TextField(null=True)
     cause_of_disease = models.TextField(null=True)

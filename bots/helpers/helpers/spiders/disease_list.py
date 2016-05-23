@@ -9,6 +9,7 @@ class DiseaseListSpider(scrapy.Spider):
     allowed_domains = ['http://jbk.39.net']
     first_url = 'http://jbk.39.net/bw_t1'
     start_formated_url = 'http://jbk.39.net/bw_t1_p{page_id}#ps'
+    pipeline = ['UniqueItemPersistencePipeline']
 
     def __init__(self, from_id=1, to_id=1, *args, **kwargs):
         to_id = max(int(from_id), int(to_id))

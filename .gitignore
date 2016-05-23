@@ -2,19 +2,19 @@
 *.pyc
 
 # Ignore server files
-/server
+server
 
 # Ignore migrations data files
-/stalk/migrations/data
+stalk/migrations/data
 
 # Ignore local bots egg files
-/bots/*/build
-/bots/*/*.egg-info
-/bots/helpers/*/build
-/bots/helpers/*/*.egg-info
+bots/*/build
+bots/*/*.egg-info
+bots/helpers/*/build
+bots/helpers/*/*.egg-info
 
 # Ignore django settings file
-/core/settings.py
+core/settings.py
 
 # Ignore .idea fold
-/.idea
+.idea

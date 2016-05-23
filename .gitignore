@@ -1,0 +1,20 @@
+# Ignore all intermediate python files.
+*.pyc
+
+# Ignore server files
+/server
+
+# Ignore migrations data files
+/stalk/migrations/data
+
+# Ignore local bots egg files
+/bots/*/build
+/bots/*/*.egg-info
+/bots/helpers/*/build
+/bots/helpers/*/*.egg-info
+
+# Ignore django settings file
+/core/settings.py
+
+# Ignore .idea fold
+/.idea

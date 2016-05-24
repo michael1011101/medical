@@ -18,7 +18,9 @@ class DiseaseElementaryInfoItem(BaseItem):
 
 class DiseaseDetailInfoItem(BaseItem):
     django_model = DiseaseDetailInfo
-    update_fields_list = []
+    update_fields_list = ['name', 'description', 'symptoms', 'cause_of_disease', 'prevention', 'clinical_examination',
+                          'distinguish', 'treatment', 'nurse', 'food_conditioning', 'complication']
+    unique_key = ('d_id',)
 
 class SymptomInfoItem(BaseItem):
     pass

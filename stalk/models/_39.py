@@ -29,12 +29,14 @@ class DiseaseDetailInfo(Lolly):
     d_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=255, null=True)
     description = models.TextField(null=True)
-    cause_of_disease = models.TextField(null=True)
     symptoms = models.TextField(null=True)
-    food_conditioning = models.TextField(null=True)
+    cause_of_disease = models.TextField(null=True)
     prevention = models.TextField(null=True)
+    clinical_examination = models.TextField(null=True)
+    distinguish = models.TextField(null=True)
     treatment = models.TextField(null=True)
-    examination = models.TextField(null=True)
+    nurse = models.TextField(null=True)
+    food_conditioning = models.TextField(null=True)
     complication = models.TextField(null=True)
 
     class Meta:

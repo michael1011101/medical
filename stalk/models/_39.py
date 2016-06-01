@@ -42,3 +42,14 @@ class DiseaseDetailInfo(Lolly):
     class Meta:
         app_label = 'stalk'
         db_table = 'disease_detail_info'
+
+class SymptomDetailInfo(Lolly):
+    s_id = models.IntegerField(unique=True)
+    name = models.CharField(max_length=255, null=True)
+    description = models.TextField(null=True)
+    cause_of_symptom = models.TextField(null=True)
+    diagnostic_details = models.TextField(null=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = 'symptom_detail_info'

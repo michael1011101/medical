@@ -6,7 +6,7 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 from bots.base.items import BaseItem
-from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo
+from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo, SymptomDetailInfo
 
 
 class DiseaseElementaryInfoItem(BaseItem):
@@ -22,5 +22,7 @@ class DiseaseDetailInfoItem(BaseItem):
                           'distinguish', 'treatment', 'nurse', 'food_conditioning', 'complication']
     unique_key = ('d_id',)
 
-class SymptomInfoItem(BaseItem):
-    pass
+class SymptomDetailInfoItem(BaseItem):
+    django_model = SymptomDetailInfo
+    update_fields_list = ['name', 'description', 'cause_of_symptom', 'diagnostic_details']
+    unique_key = ('s_id',)

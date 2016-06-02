@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from lolly import Lolly
+from helpers import NewsHelper
 
 class DiseaseElementaryInfo(Lolly):
     d_id = models.IntegerField(unique=True)
@@ -53,3 +54,17 @@ class SymptomDetailInfo(Lolly):
     class Meta:
         app_label = 'stalk'
         db_table = 'symptom_detail_info'
+
+class News(Lolly):
+    newshelper = models.OneToOneField('NewsHelper', to_field='id', db_column='id', primary_key=True)
+    title = models.CharField(max_length=200, null=True)
+    time = models.CharField(max_length=50, null=True)
+    source_website = models.CharField(max_length=200, null=True)
+    source_website_link = models.CharField(max_length=200, null=True)
+    source_author = models.CharField(max_length=200, null=True)
+    summary = models.TextField(null=True)
+    content = models.TextField(null=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = '39_news'

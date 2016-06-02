@@ -22,3 +22,21 @@ class SymptomHelper(Lolly):
     class Meta:
         app_label = 'stalk'
         db_table = 'symptom_helper'
+
+class NewsCategory(Lolly):
+    category = models.CharField(unique=True, max_length=20)
+    name = models.CharField(max_length=100)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = '39_news_category'
+
+class NewsHelper(Lolly):
+    link = models.CharField(unique=True, max_length=200)
+    category_id = models.PositiveSmallIntegerField(default=0)
+    title = models.CharField(max_length=200, null=True)
+    time = models.CharField(max_length=100, null=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = '39_news_helper'

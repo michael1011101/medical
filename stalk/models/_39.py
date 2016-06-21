@@ -53,3 +53,23 @@ class SymptomDetailInfo(Lolly):
     class Meta:
         app_label = 'stalk'
         db_table = 'symptom_detail_info'
+
+class CFDADrugInfo(Lolly):
+    url_id = models.IntegerField(unique=True)
+    approval_num = models.CharField(max_length=255, null=True)
+    name = models.CharField(max_length=255, null=True)
+    en_name = models.CharField(max_length=255, null=True)
+    trade_name = models.CharField(max_length=255, null=True)
+    dosage_forms = models.CharField(max_length=255, null=True)
+    norm = models.CharField(max_length=255, null=True)
+    producer = models.CharField(max_length=255, null=True)
+    product_address = models.CharField(max_length=255, null=True)
+    type = models.CharField(max_length=255, null=True)
+    origin_approval_num = models.CharField(max_length=255, null=True)
+    approval_date = models.CharField(max_length=255, null=True)
+    drug_based_code = models.CharField(max_length=255, null=True)
+    remark = models.TextField(null=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = 'cfda_drug_info'

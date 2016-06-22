@@ -6,6 +6,12 @@ from utils.webpage import get_content
 from _39.items import XinwenItem
 from bots.helpers.helpers.items import NewsListItem
 
+#############################################################################################
+#                                                                                           #
+# USAGE: nohup scrapy crawl xinwen -a from_id =1 -a to_id=1 --loglevel=INFO --logfile=log & #
+#                                                                                           #
+#############################################################################################
+
 class XinwenSpider(scrapy.Spider):
 	name = 'xinwen'
 	allowed_domains = ['http://news.39.net']
@@ -24,7 +30,7 @@ class XinwenSpider(scrapy.Spider):
 
 	def parse(self, response):
 		symbol = (self.mapping.get(response.url), response.url)
-		self.logger.info("Paseing ID.%d 39Health News Disease Ditail From <%s>" % symbol)
+		self.logger.info("Parsing ID.%d 39Health News Disease Ditail From <%s>" % symbol)
 		self.object = NewsListItem.get_object_by_pk(symbol[0])
 
 		item = XinwenItem()

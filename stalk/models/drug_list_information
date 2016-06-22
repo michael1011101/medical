@@ -1,0 +1,23 @@
+药品ID              manual_id 
+药品名              name 
+药品类别            category 
+药品类别明细        category_list 
+药品相关信息        cites
+药品英文名          english_name 
+生产公司名          company 
+生产公司地址        address 
+生产公司电话        telephone
+
+【成份】            drug_components     【主要原料】
+【功能主治】        major_function
+【适应症】          indication
+【用法用量】        usages
+【不良反应】        untoward_reaction
+【禁忌】            contradication
+【注意事项】        info
+【特殊人群用药】    special_crowd_medications
+【药理作用】        properties          【保健功能】
+【贮藏】            store               【贮藏方法】
+【有效期】          validity            【保质期】
+【批准文号】        approval_num
+【说明书修订日期】  manual_revision_date	

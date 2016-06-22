@@ -6,7 +6,7 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 from bots.base.items import BaseItem
-from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo, SymptomDetailInfo, News
+from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo, SymptomDetailInfo, News, DrugInfo, DrugInfoHelp
 
 
 class DiseaseElementaryInfoItem(BaseItem):
@@ -31,3 +31,16 @@ class XinwenItem(BaseItem):
     django_model = News
     update_fields_list = ['title', 'time', 'source_website', 'source_website_link', 'source_author', 'summary', 'content']
     related_field = 'news'
+
+class YaopingItem(BaseItem):
+    django_model = DrugInfo
+
+    update_fields_list = ['name', 'category', 'category_list', 'cites', 'english_name', 'company', 'address', 'telephone',      \
+                          'drug_components', 'major_function', 'indication', 'usages', 'untoward_reaction', 'contradication',   \
+                          'info', 'special_crowd_medications', 'properties', 'store', 'validity', 'approval_num',               \
+                          'manual_revision_date']
+
+    unique_key = ('manual_id',)
+
+class YaopingHelpItem(BaseItem):
+    django_model = DrugInfoHelp

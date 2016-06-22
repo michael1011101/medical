@@ -4,6 +4,12 @@ import scrapy
 from utils.webpage import get_content
 from helpers.items import NewsListItem
 
+##############################################################################################################
+#                                                                                                            #
+# USAGE: nohup scrapy crawl news_list -a from_id =1 -a to_id=1 -a category=1 --loglevel=INFO --logfile=log & #
+#                                                                                                            #
+##############################################################################################################
+
 class NewsListSpider(scrapy.Spider):
     name = 'news_list'
     allowed_domains = ['http://news.39.net']

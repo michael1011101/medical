@@ -88,3 +88,38 @@ class News(Lolly):
     class Meta:
         app_label = 'stalk'
         db_table = '39_news'
+
+class DrugInfo(Lolly):
+    manual_id = models.IntegerField(unique=True)
+    name = models.CharField(max_length=255, null=True)
+    category = models.CharField(max_length=255, null=True)
+    category_list = models.CharField(max_length=255, null=True)
+    cites = models.CharField(max_length=255, null=True)
+    english_name = models.CharField(max_length=255, null=True)
+    company = models.CharField(max_length=255, null=True)
+    address = models.CharField(max_length=255, null=True)
+    telephone = models.CharField(max_length=50, null=True)
+    drug_components = models.TextField(null=True)
+    major_function = models.TextField(null=True)
+    indication = models.TextField(null=True)
+    usages = models.TextField(null=True)
+    untoward_reaction = models.TextField(null=True)
+    contradication = models.TextField(null=True)
+    info = models.TextField(null=True)
+    special_crowd_medications = models.TextField(null=True)
+    properties = models.TextField(null=True)
+    store = models.TextField(null=True)
+    validity = models.TextField(null=True)
+    approval_num = models.TextField(null=True)
+    manual_revision_date = models.CharField(max_length=255, null=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = '39_drug_function_info'
+
+class DrugInfoHelp(Lolly):
+    manual_id = models.IntegerField(unique=True)
+
+    class Meta:
+        app_label = 'stalk'
+        db_table = 'drug_function_info'

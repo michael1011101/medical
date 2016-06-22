@@ -6,7 +6,7 @@
 # http://doc.scrapy.org/en/latest/topics/items.html
 
 from bots.base.items import BaseItem
-from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo, SymptomDetailInfo, News, DrugInfo, DrugInfoHelp
+from stalk.models._39 import DiseaseElementaryInfo, DiseaseDetailInfo, SymptomDetailInfo, News, DrugInfo
 
 
 class DiseaseElementaryInfoItem(BaseItem):
@@ -41,6 +41,3 @@ class YaopingItem(BaseItem):
                           'manual_revision_date']
 
     unique_key = ('manual_id',)
-
-class YaopingHelpItem(BaseItem):
-    django_model = DrugInfoHelp

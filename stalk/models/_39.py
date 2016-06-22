@@ -92,8 +92,9 @@ class News(Lolly):
 class DrugInfo(Lolly):
     manual_id = models.IntegerField(unique=True)
     name = models.CharField(max_length=255, null=True)
-    category = models.CharField(max_length=255, null=True)
     category_list = models.CharField(max_length=255, null=True)
+    category_first = models.CharField(max_length=255, null=True)
+    category_second = models.CharField(max_length=255, null=True)
     cites = models.CharField(max_length=255, null=True)
     english_name = models.CharField(max_length=255, null=True)
     company = models.CharField(max_length=255, null=True)

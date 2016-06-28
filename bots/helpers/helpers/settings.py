@@ -18,7 +18,7 @@ SPIDER_MODULES = ['helpers.spiders']
 NEWSPIDER_MODULE = 'helpers.spiders'
 
 DOWNLOAD_TIMEOUT = 100
-DOWNLOAD_DELAY = 8
+#DOWNLOAD_DELAY = 8
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,

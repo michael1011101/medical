@@ -26,7 +26,13 @@ class XinwenSpider(scrapy.Spider):
 		for i in self.shortlist:
 			obj = NewsListItem.get_object_by_pk(i)
 			self.mapping[obj.link] = obj.id
-			yield self.make_requests_from_url(obj.link)
+			# print self.make_requests_from_url(obj.link)
+			# input()
+			try:
+				yield self.make_requests_from_url(obj.link)
+			except Exception, e:
+				pass
+			
 
 	def parse(self, response):
 		symbol = (self.mapping.get(response.url), response.url)

@@ -25,6 +25,12 @@ class NewsListSpider(scrapy.Spider):
         self.category = self.tab[int(category)]
         super(NewsListSpider, self).__init__(*args, **kwargs)
 
+    def judgeYear(self, _time):
+        _year = _time[:4]
+        if int(_year) > 2010:
+            return True
+        return False
+
     def start_requests(self):
         for i in self.shortlist:
             if i == 0:
@@ -47,5 +53,7 @@ class NewsListSpider(scrapy.Spider):
                 item['link'] = get_content(detail.xpath('span/a/@href').extract())
                 item['title'] = get_content(detail.xpath('span')[0].xpath('a/text()').extract())
                 item['time'] = get_content(detail.xpath('span')[1].xpath('text()').extract(), skipBlank=False)
+                if not self.judgeYear(item['time']):
+                    continue
                 item_list.append(item)
         return item_list

@@ -38,6 +38,6 @@ class YaopingItem(BaseItem):
     update_fields_list = ['name', 'category', 'category_list', 'cites', 'english_name', 'company', 'address', 'telephone',      \
                           'drug_components', 'major_function', 'indication', 'usages', 'untoward_reaction', 'contradication',   \
                           'info', 'special_crowd_medications', 'properties', 'store', 'validity', 'approval_num',               \
-                          'manual_revision_date']
+                          'manual_revision_date', 'drug_interations']
 
     unique_key = ('manual_id',)

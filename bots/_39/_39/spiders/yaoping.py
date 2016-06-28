@@ -19,7 +19,7 @@ class YaopingSpider(scrapy.Spider):
 	detail_map = {u'【成份】':'drug_components', u'【主要原料】':'drug_components', u'【功能主治】':'major_function', u'【适应症】':'indication', u'【用法用量】':'usages', \
 				  u'【不良反应】':'untoward_reaction', u'【禁忌】':'contradication', u'【注意事项】':'info', u'【特殊人群用药】':'special_crowd_medications',               \
 				  u'【药理作用】':'properties', u'【保健功能】':'properties', u'【贮藏】':'store', u'【贮藏方法】':'store', u'【保质期】':'validity',                       \
-				  u'【有效期】':'validity', u'【批准文号】':'approval_num', u'【说明书修订日期】':'manual_revision_date'}
+				  u'【有效期】':'validity', u'【批准文号】':'approval_num', u'【说明书修订日期】':'manual_revision_date', u'【药物相互作用】': 'drug_interations'}
 
 	def __init__(self, from_id=1, to_id=10, file_name="manual_id.txt", *args, **kwargs):
 		self.mapping = {}
